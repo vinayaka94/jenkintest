@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Trigger downstream job') {
             steps {
-                build 'downstreamjob'
+                build 'dowstreamjob'
             }
         }
     }
