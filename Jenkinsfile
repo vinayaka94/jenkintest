@@ -15,10 +15,13 @@ pipeline {
       steps {
         echo "deploying"
       }
+      
      stage('Trigger Downstream Job') {
       steps {
         build 'dowstreamjob'
-      }  
+      }
+     }
+      
     }
   }
 }
