@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Trigger downstream job') {
             steps {
-                build 'dowstreamjob'
+                build job: 'dowstreamjob', parameters: [string(name: 'buildnumber', value: env.BUILD_NUMBER )]
             }
         }
     }
