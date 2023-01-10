@@ -1,27 +1,15 @@
 pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        echo "building"
-      }
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Hello World Build Step'
+            }
+        }
+        stage('Trigger downstream job') {
+            steps {
+                build 'downstreamjob'
+            }
+        }
     }
-    stage('Test') {
-      steps {
-        echo "testing"
-      }
-    }
-    stage('Deploy') {
-      steps {
-        echo "deploying"
-      }
-      
-     stage('Trigger Downstream Job') {
-      steps {
-        build 'dowstreamjob'
-      }
-     }
-      
-    }
-  }
 }
